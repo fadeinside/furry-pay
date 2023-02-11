@@ -1,0 +1,108 @@
+@font-face {
+	font-family: "Inter";
+	src: url("/assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+
+h1 {
+	font-size: 26px;
+	line-height: 31px;
+}
+
+h2 {
+	font-size: 22px;
+	line-height: 26px;
+}
+
+h3 {
+	font-size: 18px;
+	line-height: 21px;
+}
+
+h4 {
+	font-size: 17px;
+	line-height: 20px;
+}
+
+h5 {
+	font-size: 16px;
+	line-height: 19px;
+}
+
+h6 {
+	font-size: 15px;
+	line-height: 18px;
+}
+
+p {
+	font-size: 14px;
+	line-height: 17px;
+}
+
+ul, ol {
+	margin: 0px;
+}
+
+br {
+	display: contents;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0px;
+	word-break: break-word;
+	white-space: pre-line;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.wb-unset {
+	word-break: normal !important;
+}
+
+.fs {
+	&.col-003 {
+		color: var(--color_primany_003);
+	}
+	&.col-007 {
+		color: var(--color_primany_007);
+	}
+	&.col-009 {
+		color: var(--color_primany_003);
+	}
+	
+	&.fw-100,
+	&.thin {
+		font-weight: 100;
+	}
+	&.fw-200,
+	&.thin-extra {
+		font-weight: 200;
+	}
+	&.fw-300,
+	&.light {
+		font-weight: 300;
+	}
+	&.fw-400,
+	&.regular {
+		font-weight: 400;
+	}
+	&.fw-500,
+	&.medium {
+		font-weight: 500;
+	}
+	&.fw-600,
+	&.bolt-semi {
+		font-weight: 600;
+	}
+	&.fw-700,
+	&.bolt {
+		font-weight: 700;
+	}
+	&.fw-800,
+	&.bolt-extra {
+		font-weight: 800;
+	}
+	&.fw-900,
+	&.black {
+		font-weight: 900;
+	}
+}
