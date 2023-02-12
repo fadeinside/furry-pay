@@ -1,8 +1,72 @@
 document.addEventListener("DOMContentLoaded", function () {
+	updateCardRandomDesign();
 	updateRippleEffect();
 	updateCard3DRotate();
-	updateVisibilityBackButton()
+	updateVisibilityBackButton();
+	updateInputsFilters();
+	updatePayButton();
 });
+
+function updatePayButton() {
+	// Специальная функция для механик при нажатии на кнопку оплаты
+	$("#ID_PAY_BUTTON").on("click", function (e) {
+	});
+};
+
+function updateInputsFilters() {
+	// Текст будет показываться при невалидности поля
+	var valideText = "Заполните это поле.";
+
+	// Установить статус валидности для указанных ИД обьектов проверяя текущую и минимальную длину текста
+	$("#ID_CARD_NUMBER, #ID_CARD_DATE, #ID_CARD_CVC").on("keypress change", function () {
+		if ($(this).val().length < $(this).attr("minlength")) {
+			this.setCustomValidity(valideText);
+		} else {
+			this.setCustomValidity("");
+		};
+	});
+	
+	// Форматировать текст во время ввода для указаных ИД обьектов
+	$("#ID_CARD_NUMBER").on("keypress change", function () {
+		$(this).val(function (index, value) {
+			var regex = value;
+			regex = regex.replace(/\D/g, "");
+			regex = regex.replace(/\W/gi, "");
+			regex = regex.replace(/(.{4})/g, "$1 ");
+			regex = regex.replace(/(.{19})(.*)/g, "$1");
+			return regex;
+		});
+	});
+
+	// Форматировать текст во время ввода для указаных ИД обьектов
+	$("#ID_CARD_DATE").on("keypress change", function () {
+		$(this).val(function (index, value) {
+			var regex = value;
+			regex = regex.replace(/\D/g, "");
+			regex = regex.replace(/\W/gi, "");
+			regex = regex.replace(/(.{2})/g, "$1 / ");
+			regex = regex.replace(/(.{7})(.*)/g, "$1");
+			return regex;
+		});
+	});
+
+	// Форматировать текст во время ввода для указаных ИД обьектов
+	$("#ID_CARD_CVC").on("keypress change", function () {
+		$(this).val(function (index, value) {
+			var regex = value;
+			regex = regex.replace(/\D/g, "");
+			regex = regex.replace(/\W/gi, "");
+			return regex;
+		});
+	});
+};
+
+function updateCardRandomDesign() {
+	$(".card3d").removeClass("rotated");
+	var designs = 18;
+	var random = Math.floor(Math.random() * designs);
+	$(".frontface, .backface").css({ background: `url(/assets/images/card-background-design${random}.png)` });
+}
 
 function updateRippleEffect() {
 	$("button").on("click", function (e) {
@@ -36,7 +100,7 @@ function updateCard3DRotate() {
 
 function updateVisibilityBackButton() {
 	const URLgoBack = getAllUrlParams().goback;
-	const URLtarget = getAllUrlParams().target;
+	var URLtarget = getAllUrlParams().target;
 
 	// Hide and show the "back" button when necessary
 	if (URLgoBack == undefined) {
@@ -45,11 +109,11 @@ function updateVisibilityBackButton() {
 		$("#ID_BACK_BUTTON").removeClass("hidden");
 	};
 
-	//Return to the previous page when pressing the "back" button
+	// Return to the previous page when pressing the "back" button
 	$("#ID_BACK_BUTTON").on("click", function (e) {
 		if (URLgoBack != undefined) {
 			if (URLtarget == undefined) {
-				URLtarget = "_self"
+				URLtarget = "_self";
 			};
 			window.open(URLgoBack, URLtarget).focus();
 			return
@@ -59,7 +123,6 @@ function updateVisibilityBackButton() {
 };
 
 function getAllUrlParams(url) {
-
 	// get query string from url (optional) or window
 	var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
 

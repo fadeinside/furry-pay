@@ -24,6 +24,11 @@
 .col-bg-007 {
 	background-color: var(--color_primany_007);
 }
+.col-hov-bg-007 {
+	&:hover {
+		background-color: var(--color_primany_007) !important;
+	}
+}
 .col-bg-008 {
 	background-color: var(--color_primany_008);
 }
@@ -36,11 +41,14 @@
 .col-bg-012 {
 	background-color: var(--color_primany_012);
 }
+.col-bg-014 {
+	background-color: var(--color_primany_014);
+}
 
 // COLOR
 
 .col-000 {
-	color: var(--color_primany_000);
+	color: var(--color_primany_013);
 }
 .col-001 {
 	color: var(--color_primany_001);
@@ -71,4 +79,10 @@
 }
 .col-010 {
 	color: var(--color_primany_010);
+}
+.col-012 {
+	color: var(--color_primany_012);
+}
+.col-013 {
+	color: var(--color_primany_013);
 }

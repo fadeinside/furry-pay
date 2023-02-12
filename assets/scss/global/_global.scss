@@ -31,32 +31,3 @@ img {
 		display: none;
 	}
 }
-
-button {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding: 5px 20px;
-	gap: 20px;
-	min-height: 40px;
-	border-radius: 6px;
-	border: unset;
-
-	font-family: "Inter", system-ui;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 17px;
-
-	background-color: var(--color_primany_002);
-
-	&:hover {
-		cursor: pointer;
-		background-color: var(--color_primany_003);
-	}
-
-	&[disable] {
-		opacity: 70%;
-	}
-}

@@ -1,12 +1,12 @@
 :root {
-	themeDark {
-		&[data-theme = "0"] {
-			display: none;
+	&[data-theme = "0"] {
+		.themeDark {
+			display: none !important;
 		}
 	}
-	themeLight {
-		&[data-theme = "1"] {
-			display: none;
+	&[data-theme = "1"] {
+		.themeLight {
+			display: none !important;
 		}
 	}
 }

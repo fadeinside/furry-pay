@@ -1,5 +1,21 @@
 :root {
 	color-scheme: light;
+	--color_primany_000: #DDDDDD;
+	--color_primany_001: #EFEFEF;
+	--color_primany_002: #ffffff;
+	--color_primany_003: #a3a3a3;
+	--color_primany_004: #ffffff;
+	--color_primany_005: #000000;
+	--color_primany_006: #CF157A; // Accent
+	--color_primany_007: #00CD52;
+	--color_primany_008: #FF2F2F;
+	--color_primany_009: #227BFF;
+	--color_primany_010: #fffaf0;
+	--color_primany_011: #CF157A66; // Accent secondary
+	--color_primany_012: #FFFFFF;
+	--color_primany_013: #000000;
+	--color_primany_014: #ffefd2;
+	--color_primany_015: #e8e8e8;
 
 	&[data-theme = "1"] {
 		color-scheme: dark;
@@ -9,12 +25,8 @@
 		--color_primany_003: #5F5F5F;
 		--color_primany_004: #D9D9D9;
 		--color_primany_005: #FFFFFF;
-		--color_primany_006: #CF157A; // Accent
-		--color_primany_007: #00CD52;
-		--color_primany_008: #FF2F2F;
-		--color_primany_009: #227BFF;
 		--color_primany_010: #F2F2F2;
-		--color_primany_011: #CF157A66; // Accent secondary
-		--color_primany_012: #FFFFFF;
+		--color_primany_014: #FFFFFF;
+		--color_primany_015: #5F5F5F;
 	}
 }

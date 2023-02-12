@@ -3,6 +3,11 @@
 	src: url("/assets/fonts/Inter-VariableFont_slnt,wght.ttf");
 }
 
+@font-face {
+	font-family: "CascadiaMono";
+	src: url("/assets/fonts/CascadiaMonoPL-Regular.ttf");
+}
+
 h1 {
 	font-size: 26px;
 	line-height: 31px;
@@ -54,6 +59,10 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .fs {
+	&.font-mono {
+		font-family: "CascadiaMono";
+	}
+
 	&.fw-100,
 	&.thin {
 		font-weight: 100;

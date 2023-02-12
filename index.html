@@ -16,6 +16,7 @@
 	<!-- SCRIPTS & CSS-->
 	<link href="/styles.css" rel="stylesheet">
 	<script src="/assets/javascript/jquery.js"></script>
+	<script src="/assets/javascript/scripts-options.js"></script>
 	<script src="/assets/javascript/scripts.js"></script>
 </head>
 
@@ -23,14 +24,15 @@
 <body>
 
 	<div class="ani-opacity100 flex dir-column jc-center ai-center w-100 h-100v">
-		<div class="flex dir-row jc-center ai-start w-100">
+		<div class="flex dir-row jc-center ai-start w-100 max-w-830px">
 			<!-- ПАНЕЛЬ С ЧЕКОМ -->
 			<div class="flex dir-row jc-center ai-start padd-25px padd-r-10px gap-10px col-bg-002 h-100 w-100 max-w-415px radius-l-tb-12px crop">
 				<div class="flex dir-column jc-center ai-start padd-25px gap-20px radius-9px crop w-100">
 
 					<!-- ЛОГОТИП -->
 					<div class="flex dir-row jc-spabet ai-center">
-						<img src="/assets/icons/furry-pay-logo.svg" alt="">
+						<img class="themeDark" src="/assets/icons/furry-pay-logo.svg" alt="">
+						<img class="themeLight" src="/assets/icons/furry-pay-logo-light.svg" alt="">
 						<button id="ID_BACK_BUTTON" type="button" class="hidden">
 							<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M6.84241 12L0.842407 6L6.84241 0L7.99996 1.14469L3.98067 5.16399L3.14466 6L3.98067 6.83601L7.99996 10.8489L6.84241 12Z" fill="currentColor"/>
@@ -41,7 +43,7 @@
 
 					<!-- ЧЕК -->
 					<div class="flex dir-column ai-start">
-						<div class="flex dir-column ai-start padd-15px gap-20px col-bg-012 radius-9px radius-b-rl-unset">
+						<div class="flex dir-column ai-start padd-15px gap-20px col-bg-014 radius-9px radius-b-rl-unset">
 							<p class="fs medium col-000">Счет:</p>
 							<!-- СПИСОК ТОВАРОВ -->
 							<div id="ID_ORDER_LIST" class="flex dir-column ai-start gap-1px radius-9px crop">
@@ -82,7 +84,8 @@
 							</div>
 						</div>
 						<!-- "ПОРВАННАЯ ЛЕНТА" -->
-						<img src="/assets/icons/ragged-spikelet.svg" alt="" class="w-inherit obj-f-none">
+						<img src="/assets/icons/ragged-spikelet.svg" alt="" class="themeDark w-inherit obj-f-none">
+						<img src="/assets/icons/ragged-spikelet-light.svg" alt="" class="themeLight w-inherit obj-f-none">
 					</div>
 					<div class="flex dir-column jc-center ai-start gap-5px">
 						<div class="flex dir-row ai-start gap-10px">
@@ -93,48 +96,57 @@
 							<p class="fs regular col-003">Возникли какие-либо проблемы?</p>
 							<a href="#" target="_blank" class="noLine onlyOnHover fs regular">@FurryPay</a>
 						</div>
-						
+					</div>
+					<div class="flex dir-row ai-center gap-5px">
+						<input switcher id="ID_THEME_SWITCHER" type="checkbox">
+						<label switcher for="ID_THEME_SWITCHER"></label>
+						<p class="fs regular col-003">Темная тема</p>
 					</div>
 				</div>
 			</div>
 
 			<!-- ПАНЕЛЬ С ФОРМОЙ ВВОДА ДАННЫХ КАРТЫ -->
 			<div class="flex dir-row jc-center ai-start padd-25px padd-l-10px gap-10px col-bg-001 h-100 w-100 max-w-415px radius-r-tb-12px crop">
-				<div class="flex dir-column jc-center ai-start padd-25px gap-20px radius-9px crop w-100">
+				<form id="ID_PAYMENT_FORM" class="flex dir-column jc-center ai-start padd-25px gap-20px radius-9px crop w-100">
 					<div class="flex dir-column ai-start gap-10px">
 						<p class="fs medium">Данные карты:</p>
 
 						<!-- 3D КАРТОЧКА -->
-						<div class="card3d forcePointer w-100 min-h-200px">
+						<div class="card3d rotated forcePointer w-100 min-h-200px">
 							<!-- ЛИЦЕВАЯ СТОРОНА -->
-							<div class="frontface flex dir-column jc-spabet ai-start padd-15px min-h-200px bg-s-cover radius-9px crop" style="background: url(/assets/images/card-background-design.png)">
-								<h5 class="fs bolt">BANK</h5>
+							<div class="frontface flex dir-column jc-spabet ai-start padd-15px min-h-200px bg-s-cover radius-9px crop" style="background: url(/assets/images/card-background-design0.png)">
+								<h5 class="fs bolt col-012">BANK</h5>
 								<div class="flex dir-column ai-start gap-10px">
-									<input id="ID_CARD_NUMBER" type="text" placeholder="1234 1234 1234 1234" class="w-100">
+									<!-- НОМЕР КАРТЫ -->
+									<input id="ID_CARD_NUMBER" type="text" maxlength="19" minlength="19" placeholder="1234 1234 1234 1234" class="w-100" required>
 									<div class="flex dir-row ai-start gap-10px">
-										<input id="ID_CARD_DATE" type="text" placeholder="ММ / ГГ" class="w-100">
-										<input id="ID_CARD_CVC" type="text" placeholder="Код VCC / CVC" class="w-100">
+										<!-- ДАТА ДЕЙСТВИЯ КАРТЫ -->
+										<input id="ID_CARD_DATE" type="text" maxlength="7" minlength="7" placeholder="ММ / ГГ" class="w-100" required>
+										<!-- ЗАЩИТНЫЙ КОД КАРТЫ -->
+										<input id="ID_CARD_CVC" type="text" maxlength="3" minlength="3" placeholder="Код VCC / CVC" class="w-100" required>
 									</div>
 								</div>
 							</div>
 							<!-- ЗАДНЯЯ СТОРОНА -->
-							<div class="backface flex dir-column ai-start min-h-200px padd-t-30px bg-s-cover radius-9px crop" style="background: url(/assets/images/card-background-design.png)">
+							<div class="backface flex dir-column ai-start min-h-200px padd-t-30px bg-s-cover radius-9px crop" style="background: url(/assets/images/card-background-design0.png)">
 								<img src="/assets/images/card-backface-rippon.png" alt="">
 							</div>
 						</div>
 					</div>
 					<div class="flex dir-column ai-start gap-10px">
 						<p class="fs medium">Эл. почта:</p>
-						<input id="ID_INPUT_MAIL" type="text" placeholder="example@gmail.com" class="w-100">
+						<!-- ЭЛЕКТРОННАЯ ПОЧТА -->
+						<input id="ID_INPUT_MAIL" type="email" placeholder="example@gmail.com" class="w-100" required>
 					</div>
 					<div class="flex dir-column ai-start gap-10px">
-						<button id="ID_PAY_BUTTON" class="w-100">Оплатить 0,00 $</button>
+						<!-- КНОПКА ОПЛАТЫ -->
+						<button type="submit" id="ID_PAY_BUTTON" class="w-100 col-hov-bg-007">Оплатить 0,00 $</button>
 						<div class="flex dir-row ai-start gap-10px">
 							<img src="/assets/icons/shield-ssl-icon.svg" alt="">
 							<p class="fs medium col-007">Защищено SSL соединением</p>
 						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
