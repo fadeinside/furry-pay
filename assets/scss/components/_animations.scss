@@ -1,0 +1,56 @@
+@keyframes keyframe-tranX-150 {
+	0% {
+		transform: translateX(-150%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.ani-tranX-150 {
+	transform: translateX(-150%);
+	animation: keyframe-tranX-150 1s forwards;
+}
+
+@keyframes keyframe-opacity100 {
+	0% {
+		opacity: 0%;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+
+.ani-opacity100 {
+	opacity: 0%;
+	animation: keyframe-opacity100 1s forwards;
+}
+
+@keyframes keyframe-ripplescale {
+	to {
+		transform: translate(-50%, -50%) scale(3);
+		opacity: 0%;
+	}
+}
+
+button {
+	transition: 0.1s;
+	&:active {
+		transition: 0.1s;
+		scale: 0.95;
+	}
+}
+
+button {
+	overflow: hidden;
+	position: relative;
+
+	.ripple {
+		position: absolute;
+		transform: translate(-50%, -50%) scale(0);
+		background: var(--color_primany_011);
+		border-radius: 50%;
+		opacity: 100%;
+		animation: keyframe-ripplescale 1s ease-out;
+	}
+}

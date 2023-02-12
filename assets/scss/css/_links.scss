@@ -1,0 +1,21 @@
+a {
+	color: var(--color_primany_006);
+
+	&:hover {
+		color: var(--color_primany_006) !important;
+	}
+
+	&.noLine {
+		text-decoration: none;
+		&.onlyOnHover {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	&.forcePointer {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

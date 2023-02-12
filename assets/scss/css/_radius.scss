@@ -1,3 +1,26 @@
 .radius-circle {
 	border-radius: 50%;
 }
+
+.radius-9px {
+	border-radius: 9px;
+}
+
+.radius-12px {
+	border-radius: 12px;
+}
+
+.radius-r-tb-12px {
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+
+.radius-l-tb-12px {
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+}
+
+.radius-b-rl-unset {
+	border-bottom-right-radius: unset;
+	border-bottom-left-radius: unset;
+}

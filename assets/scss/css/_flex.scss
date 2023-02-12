@@ -1,8 +1,16 @@
+// VISIBILITY
+
+.hidden {
+	visibility: hidden;
+}
+
+
 // ISOLATION
 
 .iso {
 	isolation: isolate;
 }
+
 
 // DISPLAY
 
@@ -12,6 +20,7 @@
 
 .flex {
 	display: flex;
+	width: inherit;
 	// By default, use sing-unset to disable
 	box-sizing: border-box;
 }

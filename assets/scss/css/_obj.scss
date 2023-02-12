@@ -2,6 +2,14 @@
 	object-fit: cover;
 }
 
+.obj-f-none {
+	object-fit: none;
+}
+
 .obj-p-center {
 	object-position: center;
+}
+
+.bg-s-cover {
+	background-size: cover !important;
 }

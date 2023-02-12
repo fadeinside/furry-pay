@@ -1,0 +1,18 @@
+:root {
+	themeDark {
+		&[data-theme = "0"] {
+			display: none;
+		}
+	}
+	themeLight {
+		&[data-theme = "1"] {
+			display: none;
+		}
+	}
+}
+
+.forcePointer {
+	&:hover {
+		cursor: pointer;
+	}
+}
