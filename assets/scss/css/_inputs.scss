@@ -17,7 +17,13 @@ input:not([type="checkbox"]) {
 	line-height: 17px;
 
 	background-color: var(--color_primany_012);
-	color: var(--color_primany_000);
+	color: var(--color_primany_013);
+
+	&:autofill {
+		-webkit-text-fill-color: var(--color_primany_013);
+		-webkit-box-shadow: 0 0 0px 1000px var(--color_primany_012) inset;
+		transition: background-color infinite ease-in-out 0s;
+	}
 
 	&:focus,
 	&:hover {
