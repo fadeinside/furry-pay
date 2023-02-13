@@ -16,3 +16,9 @@
 		cursor: pointer;
 	}
 }
+
+#ID_MOBILE_CONTAINER {
+	.breakpoint-pc {
+		display: inherit;
+	}
+}

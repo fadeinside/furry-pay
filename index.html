@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 
 <!-- HTML -->
-<html lang="en" data-theme="1">
+<html lang="en" data-theme="0">
 
 <!-- HEAD -->
 <head>
@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=0" />
 
 	<!-- SITE -->
-	<title>Furry Pay</title>
+	<title>FurryPay</title>
 	<link rel="icon" type="image/x-icon" href="/assets/uploads/favicon.png" />
 
 	<!-- SCRIPTS & CSS-->
@@ -23,130 +23,133 @@
 <!-- BODY -->
 <body>
 
-	<div class="ani-opacity100 flex dir-column jc-center ai-center w-100 h-100v">
-		<div class="flex dir-row jc-center ai-start w-100 max-w-830px">
-			<!-- ПАНЕЛЬ С ЧЕКОМ -->
-			<div class="flex dir-row jc-center ai-start padd-25px padd-r-10px gap-10px col-bg-002 h-100 w-100 max-w-415px radius-l-tb-12px crop">
-				<div class="flex dir-column jc-center ai-start padd-25px gap-20px radius-9px crop w-100">
+	<div class="adapt-container-001 ani-opacity100 flex dir-column jc-center ai-center w-100 h-100v">
+		<div class="flex dir-column jc-center ai-center gap-10px max-w-830px">
+			<div class="adapt-container-000 flex dir-row jc-center ai-center max-w-830px col-bg-001 radius-12px">
+				<!-- ПАНЕЛЬ С ЧЕКОМ -->
+				<div class="adapt-container-002 flex dir-row jc-center ai-start padd-25px padd-r-10px gap-10px col-bg-002 h-100 w-100 max-w-415px radius-l-tb-12px crop">
+					<div class="flex dir-column jc-center ai-start padd-25px gap-20px radius-9px crop w-100">
 
-					<!-- ЛОГОТИП -->
-					<div class="flex dir-row jc-spabet ai-center">
-						<img class="themeDark" src="/assets/icons/furry-pay-logo.svg" alt="">
-						<img class="themeLight" src="/assets/icons/furry-pay-logo-light.svg" alt="">
-						<button id="ID_BACK_BUTTON" type="button" class="hidden">
-							<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M6.84241 12L0.842407 6L6.84241 0L7.99996 1.14469L3.98067 5.16399L3.14466 6L3.98067 6.83601L7.99996 10.8489L6.84241 12Z" fill="currentColor"/>
-							</svg>						
-							Вернуться
-						</button>
-					</div>
+						<!-- ЛОГОТИП -->
+						<div class="flex dir-row jc-spabet ai-center">
+							<img class="themeDark" src="/assets/icons/furry-pay-logo.svg" alt="">
+							<img class="themeLight" src="/assets/icons/furry-pay-logo-light.svg" alt="">
+							<button id="ID_BACK_BUTTON" type="button" class="hidden">
+								<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M6.84241 12L0.842407 6L6.84241 0L7.99996 1.14469L3.98067 5.16399L3.14466 6L3.98067 6.83601L7.99996 10.8489L6.84241 12Z" fill="currentColor"/>
+								</svg>						
+								Вернуться
+							</button>
+						</div>
 
-					<!-- ЧЕК -->
-					<div class="flex dir-column ai-start">
-						<div class="flex dir-column ai-start padd-15px gap-20px col-bg-014 radius-9px radius-b-rl-unset">
-							<p class="fs medium col-000">Счет:</p>
-							<!-- СПИСОК ТОВАРОВ -->
-							<div id="ID_ORDER_LIST" class="flex dir-column ai-start gap-1px radius-9px crop">
+						<!-- ЧЕК -->
+						<div class="flex dir-column ai-start">
+							<div class="flex dir-column ai-start padd-15px gap-20px col-bg-014 radius-9px radius-b-rl-unset">
+								<p class="fs medium col-000">Счет:</p>
+								<!-- СПИСОК ТОВАРОВ -->
+								<div id="ID_ORDER_LIST" class="flex dir-column ai-start gap-1px radius-9px crop">
 
-								<!-- ЭЛЕМЕНТ ТОВАРА ДОБАВЛЯЕМЫЙ В ID_ORDER_LIST -->
-								<div id="ID_ORDER_ITEM" class="flex dir-row jc-spabet ai-center padd-rl-15px padd-tb-10px min-h-50px col-bg-010">
-									<div class="flex dir-column ai-start w-fit">
-										<p class="fs medium col-000">Магазин</p>
-										<p class="fs regular col-003 none">Описание товара</p>
+									<!-- ЭЛЕМЕНТ ТОВАРА ДОБАВЛЯЕМЫЙ В ID_ORDER_LIST -->
+									<div id="ID_ORDER_ITEM" class="flex dir-row jc-spabet ai-center padd-rl-15px padd-tb-10px min-h-50px col-bg-010">
+										<div class="flex dir-column ai-start w-fit">
+											<p class="fs medium col-000">Магазин</p>
+											<p class="fs regular col-003 none">Описание товара</p>
+										</div>
+										<p class="fs medium col-003">0,00 $</p>
 									</div>
-									<p class="fs medium col-003">0,00 $</p>
-								</div>
 
+								</div>
+								<!-- ПОДЫТОГ -->
+								<div class="flex dir-row jc-spabet ai-start">
+									<p class="fs regular col-003">Подытог:</p>
+									<p id="ID_ORDER_SUBTOTAL" class="fs regular col-003">0,00 $</p>
+								</div>
+								<!-- НАЛОГ -->
+								<div class="flex dir-row jc-spabet ai-start">
+									<p class="fs regular col-003">Налог:</p>
+									<p id="ID_ORDER_TAX" class="fs regular col-003">0,00 $</p>
+								</div>
+								<div class="flex dir-row ai-start gap-10px">
+									<div class="line col-bg-004"></div>
+									<div class="line col-bg-004"></div>
+									<div class="line col-bg-004"></div>
+									<div class="line col-bg-004"></div>
+									<div class="line col-bg-004"></div>
+									<div class="line col-bg-004"></div>
+									<div class="line col-bg-004"></div>
+								</div>
+								<!-- ИТОГ -->
+								<div class="flex dir-row jc-spabet ai-start">
+									<h5 class="fs bolt col-000">Всего к оплате:</h5>
+									<h1 id="ID_ORDER_TOTAL" class="fs bolt col-000">0,00 $</h1>
+								</div>
 							</div>
-							<!-- ПОДЫТОГ -->
-							<div class="flex dir-row jc-spabet ai-start">
-								<p class="fs regular col-003">Подытог:</p>
-								<p id="ID_ORDER_SUBTOTAL" class="fs regular col-003">0,00 $</p>
-							</div>
-							<!-- НАЛОГ -->
-							<div class="flex dir-row jc-spabet ai-start">
-								<p class="fs regular col-003">Налог:</p>
-								<p id="ID_ORDER_TAX" class="fs regular col-003">0,00 $</p>
-							</div>
+							<!-- "ПОРВАННАЯ ЛЕНТА" -->
+							<img src="/assets/icons/ragged-spikelet.svg" alt="" class="themeDark w-inherit obj-f-none">
+							<img src="/assets/icons/ragged-spikelet-light.svg" alt="" class="themeLight w-inherit obj-f-none">
+						</div>
+						<div injectTo="ID_MOBILE_CONTAINER" class="breakpoint-pc flex dir-column jc-center ai-start gap-5px">
 							<div class="flex dir-row ai-start gap-10px">
-								<div class="line col-bg-004"></div>
-								<div class="line col-bg-004"></div>
-								<div class="line col-bg-004"></div>
-								<div class="line col-bg-004"></div>
-								<div class="line col-bg-004"></div>
-								<div class="line col-bg-004"></div>
-								<div class="line col-bg-004"></div>
+								<a href="#" target="_blank" class="noLine onlyOnHover fs regular col-003">Условия</a>
+								<a href="#" target="_blank" class="noLine onlyOnHover fs regular col-003">Конфиденциальность</a>
 							</div>
-							<!-- ИТОГ -->
-							<div class="flex dir-row jc-spabet ai-start">
-								<h5 class="fs bolt col-000">Всего к оплате:</h5>
-								<h1 id="ID_ORDER_TOTAL" class="fs bolt col-000">0,00 $</h1>
+							<div class="flex dir-row ai-start gap-5px">
+								<p class="fs regular col-003">Возникли какие-либо проблемы?</p>
+								<a href="#" target="_blank" class="noLine onlyOnHover fs regular">@FurryPay</a>
 							</div>
 						</div>
-						<!-- "ПОРВАННАЯ ЛЕНТА" -->
-						<img src="/assets/icons/ragged-spikelet.svg" alt="" class="themeDark w-inherit obj-f-none">
-						<img src="/assets/icons/ragged-spikelet-light.svg" alt="" class="themeLight w-inherit obj-f-none">
-					</div>
-					<div class="flex dir-column jc-center ai-start gap-5px">
-						<div class="flex dir-row ai-start gap-10px">
-							<a href="#" target="_blank" class="noLine onlyOnHover fs regular col-003">Условия</a>
-							<a href="#" target="_blank" class="noLine onlyOnHover fs regular col-003">Конфиденциальность</a>
+						<div injectTo="ID_MOBILE_CONTAINER" class="breakpoint-pc flex dir-row ai-center gap-5px">
+							<input switcher id="ID_THEME_SWITCHER" type="checkbox">
+							<label switcher for="ID_THEME_SWITCHER"></label>
+							<p class="fs regular col-003">Темная тема</p>
 						</div>
-						<div class="flex dir-row ai-start gap-5px">
-							<p class="fs regular col-003">Возникли какие-либо проблемы?</p>
-							<a href="#" target="_blank" class="noLine onlyOnHover fs regular">@FurryPay</a>
-						</div>
-					</div>
-					<div class="flex dir-row ai-center gap-5px">
-						<input switcher id="ID_THEME_SWITCHER" type="checkbox">
-						<label switcher for="ID_THEME_SWITCHER"></label>
-						<p class="fs regular col-003">Темная тема</p>
 					</div>
 				</div>
-			</div>
 
-			<!-- ПАНЕЛЬ С ФОРМОЙ ВВОДА ДАННЫХ КАРТЫ -->
-			<div class="flex dir-row jc-center ai-start padd-25px padd-l-10px gap-10px col-bg-001 h-100 w-100 max-w-415px radius-r-tb-12px crop">
-				<form id="ID_PAYMENT_FORM" class="flex dir-column jc-center ai-start padd-25px gap-20px radius-9px crop w-100">
-					<div class="flex dir-column ai-start gap-10px">
-						<p class="fs medium">Данные карты:</p>
+				<!-- ПАНЕЛЬ С ФОРМОЙ ВВОДА ДАННЫХ КАРТЫ -->
+				<div class="adapt-container-002 flex dir-row jc-center ai-start padd-25px padd-l-10px gap-10px col-bg-001 h-100 w-100 max-w-415px radius-r-tb-12px crop">
+					<form id="ID_PAYMENT_FORM" class="flex dir-column jc-center ai-start padd-25px gap-20px radius-9px crop w-100">
+						<div class="flex dir-column ai-start gap-10px">
+							<p class="fs medium">Данные карты:</p>
 
-						<!-- 3D КАРТОЧКА -->
-						<div class="card3d rotated forcePointer w-100 min-h-200px">
-							<!-- ЛИЦЕВАЯ СТОРОНА -->
-							<div class="frontface flex dir-column jc-spabet ai-start padd-15px min-h-200px bg-s-cover radius-9px crop" style="background: url(/assets/images/card-background-design0.png)">
-								<h5 class="fs bolt col-012">BANK</h5>
-								<div class="flex dir-column ai-start gap-10px">
-									<!-- НОМЕР КАРТЫ -->
-									<input id="ID_CARD_NUMBER" type="text" maxlength="19" minlength="19" placeholder="1234 1234 1234 1234" class="w-100" required>
-									<div class="flex dir-row ai-start gap-10px">
-										<!-- ДАТА ДЕЙСТВИЯ КАРТЫ -->
-										<input id="ID_CARD_DATE" type="text" maxlength="7" minlength="7" placeholder="ММ / ГГ" class="w-100" required>
-										<!-- ЗАЩИТНЫЙ КОД КАРТЫ -->
-										<input id="ID_CARD_CVC" type="text" maxlength="3" minlength="3" placeholder="Код VCC / CVC" class="w-100" required>
+							<!-- 3D КАРТОЧКА -->
+							<div class="card3d rotated forcePointer w-100 min-h-200px">
+								<!-- ЛИЦЕВАЯ СТОРОНА -->
+								<div class="frontface flex dir-column jc-spabet ai-start padd-15px min-h-200px bg-s-cover radius-9px crop" style="background: url(/assets/images/card-background-design0.png)">
+									<h5 class="fs bolt col-012">BANK</h5>
+									<div class="flex dir-column ai-start gap-10px">
+										<!-- НОМЕР КАРТЫ -->
+										<input id="ID_CARD_NUMBER" type="text" maxlength="19" minlength="19" placeholder="1234 1234 1234 1234" class="w-100" required>
+										<div class="flex dir-row ai-start gap-10px">
+											<!-- ДАТА ДЕЙСТВИЯ КАРТЫ -->
+											<input id="ID_CARD_DATE" type="text" maxlength="7" minlength="7" placeholder="ММ / ГГ" class="w-100" required>
+											<!-- ЗАЩИТНЫЙ КОД КАРТЫ -->
+											<input id="ID_CARD_CVC" type="text" maxlength="3" minlength="3" placeholder="Код VCC / CVC" class="w-100" required>
+										</div>
 									</div>
 								</div>
-							</div>
-							<!-- ЗАДНЯЯ СТОРОНА -->
-							<div class="backface flex dir-column ai-start min-h-200px padd-t-30px bg-s-cover radius-9px crop" style="background: url(/assets/images/card-background-design0.png)">
-								<img src="/assets/images/card-backface-rippon.png" alt="">
+								<!-- ЗАДНЯЯ СТОРОНА -->
+								<div class="backface flex dir-column ai-start min-h-200px padd-t-30px bg-s-cover radius-9px crop" style="background: url(/assets/images/card-background-design0.png)">
+									<img src="/assets/images/card-backface-rippon.png" alt="" class="w-100">
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="flex dir-column ai-start gap-10px">
-						<p class="fs medium">Эл. почта:</p>
-						<!-- ЭЛЕКТРОННАЯ ПОЧТА -->
-						<input id="ID_INPUT_MAIL" type="email" placeholder="example@gmail.com" class="w-100" required>
-					</div>
-					<div class="flex dir-column ai-start gap-10px">
-						<!-- КНОПКА ОПЛАТЫ -->
-						<button type="submit" id="ID_PAY_BUTTON" class="w-100 col-hov-bg-007">Оплатить 0,00 $</button>
-						<div class="flex dir-row ai-start gap-10px">
-							<img src="/assets/icons/shield-ssl-icon.svg" alt="">
-							<p class="fs medium col-007">Защищено SSL соединением</p>
+						<div class="flex dir-column ai-start gap-10px">
+							<p class="fs medium">Эл. почта:</p>
+							<!-- ЭЛЕКТРОННАЯ ПОЧТА -->
+							<input id="ID_INPUT_MAIL" type="email" placeholder="example@gmail.com" class="w-100" required>
 						</div>
-					</div>
-				</form>
+						<div class="flex dir-column ai-start gap-10px">
+							<!-- КНОПКА ОПЛАТЫ -->
+							<button type="submit" id="ID_PAY_BUTTON" class="w-100 col-hov-bg-007">Оплатить 0,00 $</button>
+							<div class="flex dir-row ai-start gap-10px">
+								<img src="/assets/icons/shield-ssl-icon.svg" alt="">
+								<p class="fs medium col-007">Защищено SSL соединением</p>
+							</div>
+						</div>
+						<div id="ID_MOBILE_CONTAINER" class="flex dir-column gap-20px breakpoint-tablet"></div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

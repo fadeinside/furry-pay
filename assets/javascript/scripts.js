@@ -5,7 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
 	updateVisibilityBackButton();
 	updateInputsFilters();
 	updatePayButton();
+	updateInjectContainers();
 });
+
+function updateInjectContainers() {
+	$("[injectTo]").each(function () {
+		var getInner = "#" + $(this).attr("injectTo");
+		$(this).clone(true).appendTo(getInner);
+	});
+};
 
 function updatePayButton() {
 	// Специальная функция для механик при нажатии на кнопку оплаты
@@ -25,7 +33,7 @@ function updateInputsFilters() {
 			this.setCustomValidity("");
 		};
 	});
-	
+
 	// Форматировать текст во время ввода для указаных ИД обьектов
 	$("#ID_CARD_NUMBER").on("keypress change", function () {
 		$(this).val(function (index, value) {

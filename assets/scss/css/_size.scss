@@ -1,15 +1,11 @@
 // MAX WIDTH LOCK
 
-.max-w-330px {
-	max-width: 360px;
-}
-
 .max-w-415px {
-	max-width: 415px;
+	max-width: $breakpoint-mobile;
 }
 
 .max-w-830px {
-	max-width: 830px;
+	max-width: $breakpoint-tablet;
 }
 
 
