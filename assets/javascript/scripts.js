@@ -6,9 +6,26 @@ document.addEventListener("DOMContentLoaded", function () {
 	updateInputsFilters();
 	updatePayButton();
 	updateInjectContainers();
+	updateResultButtons();
 });
 
+function updateResultButtons() {
+	$("#ID_CLOSE_BUTTON").on("click", function () {
+		// Не работает для окон открытые не скриптом
+		window.close("", "_parent", "");
+	});
+
+	$("#ID_SENDEMAIL_BUTTON").on("click", function () {
+		// Функции отправки чека на указаный в форме адресс
+	});
+
+	$("#ID_RETUR_TO_FORM_BUTTON").on("click", function () {
+		// Возвращяет на страницу ввода данных формы
+	});
+};
+
 function updateInjectContainers() {
+	// Клонирует все обьекты с атрибутом injectTo в указаный контейнер
 	$("[injectTo]").each(function () {
 		var getInner = "#" + $(this).attr("injectTo");
 		$(this).clone(true).appendTo(getInner);

@@ -1,4 +1,4 @@
-@keyframes keyframe-tranX-150 {
+@keyframes keyframe-tranX-n150 {
 	0% {
 		transform: translateX(-150%);
 	}
@@ -7,8 +7,22 @@
 	}
 }
 
-.ani-tranX-150 {
+.ani-tranX-n150 {
 	transform: translateX(-150%);
+	animation: keyframe-tranX-n150 1s forwards;
+}
+
+@keyframes keyframe-tranX-150 {
+	0% {
+		transform: translateX(150%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.ani-tranX-150 {
+	transform: translateX(150%);
 	animation: keyframe-tranX-150 1s forwards;
 }
 

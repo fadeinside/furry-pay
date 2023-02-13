@@ -106,51 +106,32 @@
 					</div>
 				</div>
 
-				<!-- ПАНЕЛЬ С ФОРМОЙ ВВОДА ДАННЫХ КАРТЫ -->
+				<!-- СТРАНИЦА ОБ УСПЕШНОЙ ОПЛАТЕ -->
 				<div class="adapt-container-002 flex dir-row jc-center ai-start padd-25px padd-l-10px gap-10px col-bg-001 h-100 w-100 max-w-415px radius-r-tb-12px crop">
-					<form id="ID_PAYMENT_FORM" class="flex dir-column jc-center ai-start padd-25px gap-20px radius-9px crop w-100">
-						<h2 class="fs bolt">Оплата картой</h2>
+					<div class="ani-tranX-150 flex dir-column jc-center ai-start padd-25px gap-20px radius-9px crop w-100">
+						<h2 class="fs bolt">Успех! 🎉</h2>
 						<div class="flex dir-column ai-start gap-10px">
-							<!-- <p class="fs medium">Данные карты:</p> -->
-
-							<!-- 3D КАРТОЧКА -->
-							<div class="card3d rotated forcePointer w-100 min-h-200px">
-								<!-- ЛИЦЕВАЯ СТОРОНА -->
-								<div class="frontface flex dir-column jc-spabet ai-start padd-15px min-h-200px bg-s-cover radius-9px crop" style="background: url(/assets/images/card-background-design0.png)">
-									<h5 class="fs bolt col-012">BANK</h5>
-									<div class="flex dir-column ai-start gap-10px">
-										<!-- НОМЕР КАРТЫ -->
-										<input id="ID_CARD_NUMBER" type="text" maxlength="19" minlength="19" placeholder="1234 1234 1234 1234" class="w-100" required>
-										<div class="flex dir-row ai-start gap-10px">
-											<!-- ДАТА ДЕЙСТВИЯ КАРТЫ -->
-											<input id="ID_CARD_DATE" type="text" maxlength="7" minlength="7" placeholder="ММ / ГГ" class="w-100" required>
-											<!-- ЗАЩИТНЫЙ КОД КАРТЫ -->
-											<input id="ID_CARD_CVC" type="text" maxlength="3" minlength="3" placeholder="Код VCC / CVC" class="w-100" required>
-										</div>
-									</div>
-								</div>
-								<!-- ЗАДНЯЯ СТОРОНА -->
-								<div class="backface flex dir-column ai-start min-h-200px padd-t-30px bg-s-cover radius-9px crop" style="background: url(/assets/images/card-background-design0.png)">
-									<img src="/assets/images/card-backface-rippon.png" alt="" class="w-100">
-								</div>
+							<div class="flex dir-column ai-start padd-15px gap-10px col-bg-002 radius-9px">
+								<p class="fs bolt col-007">Счет успешно оплачен! ✅</p>
+								<p>Подробности:</p>
+								<ul>
+									<li><p id="ID_PAYMENT_UUID">Номер счета: 0000-0000-0000-0000</p></li>
+									<li><p id="ID_PAYMENT_DATE">Оплачено: DD.MM.YYYY HH:MM</p></li>
+								</ul>
+							</div>
+							<div class="flex dir-column ai-start gap-10px">
+								<button id="ID_CLOSE_BUTTON" type="button" class="w-100">Закрыть</button>
+								<button id="ID_SENDEMAIL_BUTTON" type="button" class="w-100">Отправить чек</button>
 							</div>
 						</div>
-						<div class="flex dir-column ai-start gap-10px">
-							<p class="fs medium">Эл. почта:</p>
-							<!-- ЭЛЕКТРОННАЯ ПОЧТА -->
-							<input id="ID_INPUT_MAIL" type="email" placeholder="example@gmail.com" class="w-100" required>
-						</div>
-						<div class="flex dir-column ai-start gap-10px">
-							<!-- КНОПКА ОПЛАТЫ -->
-							<button disabled type="submit" id="ID_PAY_BUTTON" class="w-100 col-hov-bg-007">Оплатить 0,00 $</button>
-							<div class="flex dir-row ai-start gap-10px">
-								<img src="/assets/icons/shield-ssl-icon.svg" alt="">
-								<p class="fs medium col-007">Защищено SSL соединением</p>
-							</div>
+						<div class="flex dir-row ai-start gap-10px">
+							<img src="/assets/icons/shield-ssl-icon.svg" alt="">
+							<p class="fs medium col-007">Защищено SSL соединением</p>
 						</div>
 						<div id="ID_MOBILE_CONTAINER" class="flex dir-column gap-20px breakpoint-tablet"></div>
-					</form>
+					</div>
 				</div>
+				<!-- КОНЕЦ -->
 			</div>
 		</div>
 	</div>

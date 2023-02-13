@@ -33,10 +33,10 @@ input:not([type="checkbox"]) {
 		outline-color: var(--color_primany_006);
 	}
 	&:invalid {
-		color: var(--color_primany_008) !important;
-		outline-color: var(--color_primany_008);
-		outline-style: dashed;
-		outline-width: 2px;
+		border-bottom: 2px solid var(--color_primany_008);
+	}
+	&:valid {
+		border-bottom: 2px solid var(--color_primany_007);
 	}
 }
 
