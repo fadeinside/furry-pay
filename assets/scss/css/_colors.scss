@@ -25,7 +25,7 @@
 	background-color: var(--color_primany_007);
 }
 .col-hov-bg-007 {
-	&:hover {
+	&:hover:not([disabled]) {
 		background-color: var(--color_primany_007) !important;
 	}
 }

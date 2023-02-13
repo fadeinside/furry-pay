@@ -33,7 +33,7 @@
 	}
 }
 
-button {
+button:not([disabled]) {
 	transition: 0.1s;
 	&:active {
 		transition: 0.1s;
@@ -41,7 +41,7 @@ button {
 	}
 }
 
-button {
+button:not([disabled]) {
 	overflow: hidden;
 	position: relative;
 
@@ -53,4 +53,24 @@ button {
 		opacity: 100%;
 		animation: keyframe-ripplescale 1s ease-out;
 	}
+}
+
+@keyframes keyframes-shake {
+	0% {
+		transform: translate(-1px, 1px);
+	}
+	33% {
+		transform: translate(0px, -2px);
+	}
+	66% {
+		transform: translate(-2px, 0px);
+	}
+	100% {
+		transform: translate(-2px, -2px);
+	}
+}
+
+button:active[disabled] {
+	animation: keyframes-shake 0.1s infinite;
+	background-color: var(--color_primany_008);
 }

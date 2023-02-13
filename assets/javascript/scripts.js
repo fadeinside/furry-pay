@@ -25,6 +25,15 @@ function updateInputsFilters() {
 	// Текст будет показываться при невалидности поля
 	var valideText = "Заполните это поле.";
 
+	// Заблокировать / Разблокировать кнопку отправки формы
+	$("input").on("keypress change", function () {
+		if (document.forms["ID_PAYMENT_FORM"].reportValidity() == true) {
+			$("#ID_PAY_BUTTON").attr("disabled", null);
+		} else {
+			$("#ID_PAY_BUTTON").attr("disabled");
+		};
+	});
+
 	// Установить статус валидности для указанных ИД обьектов проверяя текущую и минимальную длину текста
 	$("#ID_CARD_NUMBER, #ID_CARD_DATE, #ID_CARD_CVC").on("keypress change", function () {
 		if ($(this).val().length < $(this).attr("minlength")) {

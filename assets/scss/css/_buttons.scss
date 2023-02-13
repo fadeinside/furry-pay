@@ -17,12 +17,15 @@ button {
 
 	background-color: var(--color_primany_002);
 
-	&:hover {
+	&:hover:not([disabled]) {
 		cursor: pointer;
 		background-color: var(--color_primany_015);
 	}
 
-	&[disable] {
-		opacity: 70%;
+	&[disabled] {
+		transition: 1s;
+		&:hover {
+			cursor: not-allowed;
+		}
 	}
 }
